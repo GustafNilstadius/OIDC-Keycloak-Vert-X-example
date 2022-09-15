@@ -2,7 +2,7 @@
 
 To launch your tests:
 ```shell script
-mvn lean test
+mvn clean test
 ```
 
 To package your application:
