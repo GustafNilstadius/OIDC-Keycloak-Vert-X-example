@@ -50,10 +50,12 @@ public class MainVerticle extends AbstractVerticle {
 
           router.route("/logout").handler(this::handleLogout);
           router.route("/private/*").handler(oauth2handler);
-          router.route("/private/index.html").handler(routingContext -> {
-            System.out.println(routingContext.user().attributes().encodePrettily());
+          router.route("/private/account").handler(routingContext -> {
             System.out.println(routingContext.user().principal().encodePrettily());
-            routingContext.next();
+            routingContext.response()
+              .setStatusCode(200)
+              .putHeader("Content-Type", "application/json")
+              .end(routingContext.user().attributes().encodePrettily());
           });
           router.get().handler(StaticHandler.create("www"));
         } catch (Exception e) {
