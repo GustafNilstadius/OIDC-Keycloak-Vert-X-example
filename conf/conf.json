@@ -1,0 +1,5 @@
+{
+  "OIDC_CLIENT": "dev-client",
+  "OIDC_CLIENT_SECRET": "YYD7Gv5Iz8nlMuBi7IQQA7mPfXFtIP8o",
+  "OIDC_DISCOVERY_URL": "http://localhost:8989/realms/dev"
+}
